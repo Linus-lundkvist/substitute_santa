@@ -19,7 +19,7 @@ def läsa():
         lista = f.readlines()
         print(f"{lista[0]}ÖNSKELISTA")
         for i in range(1,len(lista)):
-            print(f"{lista[i]}")
+            print(lista[i], end="")
 
 def dumdum():
     with open(f"programering/dåligabarn.txt", "r", encoding="utf8") as f:
