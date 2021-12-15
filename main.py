@@ -21,16 +21,36 @@ def läsa():
         for i in range(1,len(lista)):
             print(f"{lista[i]}")
 
-
+def dumdum():
+    with open(f"programering/dåligabarn.txt", "r", encoding="utf8") as f:
+        barn = f.readlines()
+        print("Här är barnen på listan")
+        for i in barn:
+            print(i, end="")
+        while True:
+            dumbarn = input("Skriv namnet på dumt barn, om du är klar skriv # ")
+            if "#" in dumbarn:
+                break
+            else:
+                dumbarn = dumbarn+"\n"
+                barn += dumbarn 
+        with open(f"programering/dåligabarn.txt", "w", encoding="utf8") as f:        
+            for i in range(0,len(barn)):
+                f.write(barn[i])
+        
 
 def main():
-  print("Vill du skapa en önskelista tryck 1, Vill du läsa upp en önskelista tryck 2")
+  print("""\nVill du skapa en önskelista tryck 1, Vill du läsa upp en önskelista tryck 2, 
+För att lägga till barn på dum listan tryck 3""")
   val = input("")
   if val == "1":
     skapa()
     
   elif val == "2":
-      läsa()
+    läsa()
+
+  elif val == "3":
+    dumdum()
     
 
 
